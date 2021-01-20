@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Form</title>
+    </head>
+    <body>
+        <div class="c">
+            <br>
+            <h2>Please Enter Your Details</h2>
+            <h3>Fill the application form below and submit</h3>
+            <form>
+            <div class="a">
+                <input type="text" placeholder="First name" required> <input type="text" placeholder="Last name" required><br>
+                <input type="text" placeholder="Mail@example.com" required> <br>
+                <input type="text" placeholder="Phone Number" required><br>
+                <input list="genders" name="gender" placeholder="Gender" required>
+                <datalist id="genders">
+                <option value="Male">
+                <option value="Female">
+                <option value="Other">
+                </datalist>
+                <br>
+                <input list="countries" name="country" placeholder="Select Country" required>
+                <datalist id="countries">
+                <option value="India">
+                <option value="Australia">
+                <option value="Nepal">
+                </datalist>
+                <br>
+                <input list="days" name="day" placeholder="Day" required>
+                <datalist id="days">
+                <option value="1"><option value="2"><option value="3"><option value="4"><option value="5"><option value="6"><option value="7"><option value="8"><option value="9"><option value="10">
+                <option value="11"><option value="12"><option value="13"><option value="14"><option value="15"><option value="16"><option value="17"><option value="18"><option value="19"><option value="20">
+                <option value="21"><option value="22"><option value="23"><option value="24"><option value="25"><option value="26"><option value="27"><option value="28"><option value="29"><option value="30"><option value="31">
+                </datalist>
+
+                <input list="months" name="month" placeholder="Month" required>
+                <datalist id="months">
+                <option value="Jan"><option value="Feb"><option value="Mar"><option value="Apr"><option value="May"><option value="Jun">
+                <option value="Jul"><option value="Aug"><option value="Sep"><option value="Oct"><option value="Nov"><option value="Dec">
+                
+                </datalist>
+                <input list="years" name="year" placeholder="Year" required>
+                <datalist id="years">
+                <option value="1990"><option value="1991"><option value="1992"><option value="1993"><option value="1994"><option value="1995">
+                <option value="1996"><option value="1997"><option value="1998"><option value="1999"><option value="2000"><option value="2001">
+                <option value="2002"><option value="2003"><option value="2004"><option value="2005"><option value="2006"><option value="2007">
+                </datalist>
+                <br>
+                <input type="text" placeholder="Street Address" required> <input type="text" placeholder="Street Line 2" required><br>
+                <input type="text" placeholder="Landmark" required> <input type="text" placeholder="City" required><br>
+                <input type="text" placeholder="State/Province" required> <input type="text" placeholder="Postal/Zip Code" required><br>
+                
+                <input type="submit">
+                
+            </div>
+        </form>
+            <div class ="b">
+                <h4>Name*</h4>
+                <h4 style="padding-top: 20px;">E-Mail Address*</h4>
+                <h4 style="padding-top: 16px;">Phone Number*</h4>
+                <h4 style="padding-top: 16px;">Gender*</h4>
+                <h4>Citizen*</h4>
+                <h4>Date of Birth*</h4>
+                <h4>Address*</h4>
+            </div>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+        </div>
+    </body>
+</html>

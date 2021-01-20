@@ -1,0 +1,136 @@
+body
+            {
+                padding-left:35%;
+            }
+            div.c
+            {
+                padding-left: 20px;
+                color:#fff;
+                width: 50%;
+                height:100%;
+                background-image: url('background_image.jpg');
+                background-color: black;
+            }
+            h2
+            {
+                text-align: center;
+            }
+            h3
+            {
+                text-align: center;
+            }
+            h4
+            {
+                padding-left: 20px;
+            }
+            input[type=text]
+            {
+                width: 150px;
+                padding: 12px 8px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid black;
+                box-sizing: border-box;
+                padding-top: 10px;
+            }
+            input[list=days]
+            {
+                width: 99px;
+                padding: 2px 8px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid black;
+                box-sizing: border-box;
+                padding-top: 2px;
+                border-radius: 4px;
+            }
+            input[list=months]
+            {
+                width: 99px;
+                padding: 2px 8px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid black;
+                box-sizing: border-box;
+                padding-top: 2px;
+                border-radius: 4px;
+            }
+            input[list=years]
+            {
+                width: 99px;
+                padding: 2px 8px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid black;
+                box-sizing: border-box;
+                padding-top: 2px;
+                border-radius: 4px;
+            }
+            input[placeholder="Mail@example.com"]
+            {
+                width: 305px;
+                padding: 12px 8px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid black;
+                box-sizing: border-box;
+                padding-top: 10px;
+            }
+            input[placeholder="Phone Number"]
+            {
+                width: 305px;
+                padding: 12px 8px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid black;
+                box-sizing: border-box;
+                padding-top: 10px;
+            }
+            input[list="genders"]
+            {
+                width: 305px;
+                padding: 2px 8px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid black;
+                box-sizing: border-box;
+                padding-top: 2px;
+                border-radius: 4px;
+            }
+            input[list="countries"]
+            {
+                width: 305px;
+                padding: 2px 8px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid black;
+                box-sizing: border-box;
+                padding-top: 2px;
+                border-radius: 4px;
+            }
+            input[type="submit"]
+            {
+                background-color: rgb(29, 68, 240);
+                color: white;
+                width: 305px;
+                padding: 12px 8px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid black;
+                box-sizing: border-box;
+                padding-top: 10px;
+            }
+           
+            div.a
+            {
+                position: absolute;
+                padding-left: 11%;
+                /* background-color: royalblue; */
+                
+            }
+            div.b
+            {
+                position: relative;
+                
+                width:150px;
+            }
