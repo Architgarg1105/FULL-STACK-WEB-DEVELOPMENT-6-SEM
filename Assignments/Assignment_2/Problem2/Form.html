@@ -11,9 +11,9 @@
             <h3>Fill the application form below and submit</h3>
             <form>
             <div class="a">
-                <input type="text" placeholder="First name" required> <input type="text" placeholder="Last name" required><br>
-                <input type="text" placeholder="Mail@example.com" required> <br>
-                <input type="text" placeholder="Phone Number" required><br>
+                <input type="text" placeholder="First name" name="fname" required> <input type="text" placeholder="Last name" name="lname" required><br>
+                <input type="text" placeholder="Mail@example.com" name="mailid" required> <br>
+                <input type="text" placeholder="Phone Number" name="phonenumber" required><br>
                 <input list="genders" name="gender" placeholder="Gender" required>
                 <datalist id="genders">
                 <option value="Male">
@@ -48,11 +48,11 @@
                 <option value="2002"><option value="2003"><option value="2004"><option value="2005"><option value="2006"><option value="2007">
                 </datalist>
                 <br>
-                <input type="text" placeholder="Street Address" required> <input type="text" placeholder="Street Line 2" required><br>
-                <input type="text" placeholder="Landmark" required> <input type="text" placeholder="City" required><br>
-                <input type="text" placeholder="State/Province" required> <input type="text" placeholder="Postal/Zip Code" required><br>
+                <input type="text" placeholder="Street Address" name="streetaddress" required> <input type="text" placeholder="Street Line 2" name="streetline2" required><br>
+                <input type="text" placeholder="Landmark" name="landmark" required> <input type="text" placeholder="City" name="city" required><br>
+                <input type="text" placeholder="State/Province" name="state" required> <input type="text" placeholder="Postal/Zip Code" name="zipcode" required><br>
                 
-                <input type="submit">
+                <input type="submit" value="SUBMIT">
                 
             </div>
         </form>
