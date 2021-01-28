@@ -23,6 +23,7 @@ if(isset($_POST["submit"])){
 		$city="";
 		$course="";    
 		$arr=array("");
+		$_POST["submit"]="";
 	}
 } 
 ?> 
@@ -62,36 +63,37 @@ if(isset($_POST["submit"])){
 	</style>
 </head>
 <body>
+
 <h1><i>Enter Your Details!</i></h1>
 <form method="POST" action="FORM.php">
 <table cellspacing=" 35">
 	<tr>
 		<td>Name*</td>
-		<td><input type="text" placeholder="Enter Name" style="width: 300px" name="name" required></td>
+		<td><input type="text" placeholder="Enter Name" style="width: 300px" name="name" value="<?php echo isset($_POST["name"]) ? $_POST["name"] : '' ?>" required></td>
 	</tr>
 	<tr>
 		<td>E-Mail Address*</td>
-		<td><input type="email" placeholder="Enter E-mail" style="width: 300px " name="email" required></td>
+		<td><input type="email" placeholder="Enter E-mail" style="width: 300px " name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>" required></td>
 	</tr>
 	<tr>
 		<td>Contact No*</td>
-		<td><input type="text" placeholder="Enter Phone Number" style="width: 300px" name="contact"  pattern="[1-9]{1}[0-9]{9}" title="Enter 10 digit number, number can't start with 0!" required></td>
+		<td><input type="text" placeholder="Enter Phone Number" style="width: 300px" name="contact"  pattern="[1-9]{1}[0-9]{9}" title="Enter 10 digit number, number can't start with 0!" value="<?php echo isset($_POST['contact']) ? $_POST['contact'] : '' ?>"  required></td>
 	</tr>
 	<tr>
 		<td>City*</td>
-		<td><input type="text" name="city"  style="width: 300px" placeholder="Enter City" required></td>
+		<td><input type="text" name="city"  style="width: 300px" placeholder="Enter City" value="<?php echo isset($_POST['city']) ? $_POST['city'] : '' ?>"required></td>
 	</tr>
 	<tr>
 		<td>Course*</td>
-		<td><input type="text" name="course"  style="width: 300px" placeholder="Enter Course" required></td>
+		<td><input type="text" name="course"  style="width: 300px" placeholder="Enter Course" value="<?php echo isset($_POST['course']) ? $_POST['course'] : '' ?>"required></td>
 	</tr>
 	<tr>
 		<td>Interests*</td>
-		<td>Sports<input type="checkbox"  name="interests[]">
-			Music<input type="checkbox"  name="interests[]">
-			Solving Puzzles<input type="checkbox"  name="interests[]"><br>
-			Travelling<input type="checkbox" name="interests[]">
-			Gaming<input type="checkbox" name="interests[]">
+		<td>Sports<input type="checkbox"  value="Sports" name="interests[]">
+			Music<input type="checkbox"  value="Music" name="interests[]">
+			Solving Puzzles<input type="checkbox"  value="Solving Puzzles" name="interests[]"><br>
+			Travelling<input type="checkbox" value="Travelling" name="interests[]">
+			Gaming<input type="checkbox" value="Gaming" name="interests[]">
 		</td>
 	</tr>
 	<tr>
@@ -121,12 +123,12 @@ if(isset($_POST["submit"])){
 			   	 if($arr[$temp]!="")
 			   	 {
 			   	 	echo $arr[$temp];
-			   	 	if($temp!= $z-1 )
+			   	 	if($temp!= $size-1 )
 			   	 	{
 			   	 		echo ", " ;
 			   	 	}
 			   	 }
-			   } 
+			   }
 			   ?></td>
 		</tr>
 </table>
