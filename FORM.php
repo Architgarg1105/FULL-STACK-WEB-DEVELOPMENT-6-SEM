@@ -45,7 +45,7 @@ if(isset($_POST["submit"])){
 		table{
 			margin: auto;
             border: 4px solid white;
-			
+			border-collapse: collapse;
 		}
 		#submit{
 			color: white;
