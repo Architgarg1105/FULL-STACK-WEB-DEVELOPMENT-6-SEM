@@ -75,7 +75,7 @@ if(isset($_POST["submit"])){
 	</tr>
 	<tr>
 		<td>Contact No*</td>
-		<td><input type="text" placeholder="Enter Phone Number" style="width: 300px" name="contact"  minlength="10" required></td>
+		<td><input type="text" placeholder="Enter Phone Number" style="width: 300px" name="contact"  pattern="[1-9]{1}[0-9]{9}" title="Enter 10 digit number, number can't start with 0!">required></td>
 	</tr>
 	<tr>
 		<td>City*</td>
