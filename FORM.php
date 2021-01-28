@@ -64,32 +64,31 @@ if(isset($_POST["submit"])){
 <table cellspacing=" 35">
 	<tr>
 		<td>Name*</td>
-		<td><input type="text" placeholder=" Name" style="width: 300px" name="name" required></td>
+		<td><input type="text" placeholder="Enter Name" style="width: 300px" name="name" required></td>
 	</tr>
 	<tr>
 		<td>E-Mail Address*</td>
-		<td><input type="email" placeholder="Mail@gmail.com" style="width: 300px " name="email" required></td>
+		<td><input type="email" placeholder="Enter E-mail" style="width: 300px " name="email" required></td>
 	</tr>
 	<tr>
 		<td>Contact No*</td>
-		<td><input type="text" placeholder="Phone Number" style="width: 300px" name="contact"  minlength="10" required></td>
+		<td><input type="text" placeholder="Enter Phone Number" style="width: 300px" name="contact"  minlength="10" required></td>
 	</tr>
 	<tr>
 		<td>City*</td>
-		<td><input type="text" name="city"  style="width: 300px" placeholder="City" required></td>
+		<td><input type="text" name="city"  style="width: 300px" placeholder="Enter City" required></td>
 	</tr>
 	<tr>
 		<td>Course*</td>
-		<td><input type="text" name="course"  style="width: 300px" placeholder="course" required></td>
+		<td><input type="text" name="course"  style="width: 300px" placeholder="Enter Course" required></td>
 	</tr>
 	<tr>
 		<td>Interests*</td>
-		<td>Sports<input type="checkbox" value="Sports" name="interests[]">
-			Travel<input type="checkbox" value="Travel" name="interests[]">
-			Reading<input type="checkbox" value="Reading" name="interests[]"><br>
-			Cooking<input type="checkbox" value="Cooking" name="interests[]">
-			Blogging<input type="checkbox" value="Blogging" name="interests[]">
-			Other<input type="checkbox" value="Other" name="interests[]">
+		<td>Sports<input type="checkbox"  name="interests[]">
+			Music<input type="checkbox"  name="interests[]">
+			Solving Puzzles<input type="checkbox"  name="interests[]"><br>
+			Travelling<input type="checkbox" name="interests[]">
+			Gaming<input type="checkbox" name="interests[]">
 		</td>
 	</tr>
 	<tr>
