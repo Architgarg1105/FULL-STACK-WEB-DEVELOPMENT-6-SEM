@@ -5,7 +5,7 @@ $contact="";
 $city="";
 $course="";    
 $arr=array(" ");
-$s="";
+$size="";
 if(isset($_POST["submit"])){
 	$name=$_POST["name"];
 	$email=$_POST["email"];
@@ -13,8 +13,8 @@ if(isset($_POST["submit"])){
 	$city=$_POST["city"];
 	$course=$_POST["course"];    
 	$arr=($_POST["interests"]);
-	$s=count($arr);
-	if($s<3)
+	$size=count($arr);
+	if($size<3)
 	{
 		echo '<script>alert("Select atleast 3 options")</script>'; 
 		$name="";
@@ -75,7 +75,7 @@ if(isset($_POST["submit"])){
 	</tr>
 	<tr>
 		<td>Contact No*</td>
-		<td><input type="text" placeholder="Enter Phone Number" style="width: 300px" name="contact"  pattern="[1-9]{1}[0-9]{9}" title="Enter 10 digit number, number can't start with 0!">required></td>
+		<td><input type="text" placeholder="Enter Phone Number" style="width: 300px" name="contact"  pattern="[1-9]{1}[0-9]{9}" title="Enter 10 digit number, number can't start with 0!" required></td>
 	</tr>
 	<tr>
 		<td>City*</td>
@@ -116,12 +116,12 @@ if(isset($_POST["submit"])){
 		   <td id="td2"><?php echo $city ?></td>
 		   <td id="td2"><?php echo $course ?></td>
 		   <td id="td2"><?php 
-			   for($temp=0;$temp<$s;$temp++)
+			   for($temp=0;$temp<$size;$temp++)
 			   {
 			   	 if($arr[$temp]!="")
 			   	 {
 			   	 	echo $arr[$temp];
-			   	 	if($temp!= $s-1 )
+			   	 	if($temp!= $z-1 )
 			   	 	{
 			   	 		echo ", " ;
 			   	 	}
