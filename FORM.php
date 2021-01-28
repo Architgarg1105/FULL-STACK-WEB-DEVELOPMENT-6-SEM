@@ -53,6 +53,9 @@ if(isset($_POST["submit"])){
 			width: 200px;
             height: 30px;
 		}
+		#submit:hover{
+			color: green;
+		}
         td{
             font-size: 20px;
         }
