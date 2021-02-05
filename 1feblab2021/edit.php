@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
     mysqli_query($conn,$sql);
     $sql1= "UPDATE student_details SET branch = '$branch', year = '$year' WHERE username = $id" ;
     mysqli_query($conn,$sql1);
-    echo "updated";
+    echo "Updated";
 }
 else{
     echo "Please click submit button to submit the data..";
