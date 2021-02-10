@@ -17,29 +17,38 @@ $val6= $var2['year'];
 if(isset($_POST['submit']))
 {
     $username = $_POST['username'];
-    
     $email = $_POST['email'];
-    
     $gender = $_POST['gender'];
-  
     $city = $_POST['city'];
-   
     $branch= $_POST['branch'];
-    
     $year= $_POST['year'];
-    $sql= "UPDATE users SET username = '$username', email = '$email', gender='$gender', city='$city' WHERE id = $id" ;
+    $sql_u = "SELECT * FROM users WHERE username='$username'";
+    $sql_e = "SELECT * FROM users WHERE email='$email'";
+  	$res_u = mysqli_query($conn, $sql_u);
+      $res_e = mysqli_query($conn, $sql_e);
+    if (mysqli_num_rows($res_u) > 0) 
+    {
+      echo "Sorry... username already taken"; 	
+    }
+    else if(mysqli_num_rows($res_e) > 0){
+  	  echo "Sorry... email already taken"; 	
+  	}
+    else{
+        $sql= "UPDATE users SET  gender='$gender', city='$city' WHERE id = $id" ;
     mysqli_query($conn,$sql);
     $sql1= "UPDATE student_details SET branch = '$branch', year = '$year' WHERE username = $id" ;
     if(mysqli_query($conn, $sql1)){
         header("Location:details.php");
     }
+         echo 'Saved!';
+         exit();
+    }
+
 }
 else{
-    echo "Please click submit button to submit the data..";
+    echo "Please click Update button to update the data..";
 }
 ?>
-
-
 
 <html>
     <head>
@@ -47,8 +56,10 @@ else{
     </head>
 <body>
 <form method="POST" action="edit.php?id=<?php echo "$id"?>">
-    USERNAME <input type="text" name="username" value="<?php echo "$val1" ?>" placeholder="Type Your Username" required><br>
-    E-MAIL <input type="email" name="email" value="<?php echo "$val2" ?>" placeholder="Type Your E-mail" required><br>
+    USERNAME:<?php echo "$val1" ?><br>
+    EMAIL-ID:<?php echo "$val2" ?><br>
+    <!-- username <input type="text" name="username" value="<?php echo "$val1" ?>" placeholder="Type Your username" required><br> -->
+    <!-- E-MAIL <input type="email" name="email" value="<?php echo "$val2" ?>" placeholder="Type Your E-mail" required><br> -->
     GENDER<br> <input type="radio" id="male" name="gender" value="male" <?php if($val3=="male"){echo "checked";}?>>
     <label for="male">Male</label><br>
     <input type="radio" id="female" name="gender" value="female" <?php if($val3=="female"){echo "checked";}?>>
@@ -71,7 +82,7 @@ else{
     </select><br>
     BRANCH<input type="text" name="branch" value="<?php echo "$val5" ?>" placeholder="Enter Branch" required><br>
     YEAR<input type="text" name="year" value="<?php echo "$val6" ?>" placeholder="Enter Year" required><br>
-    <input type="submit" name="submit" value="Click Here To Submit Your Data">
+    <input type="submit" name="submit" value="Click Here To Update Your Data">
 </form>
 </body>
 </html>

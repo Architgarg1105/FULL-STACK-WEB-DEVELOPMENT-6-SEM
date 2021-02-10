@@ -8,5 +8,5 @@ $sql1= "DELETE FROM student_details WHERE username=$id";
     mysqli_query($conn,$sql1);
 $sql= "DELETE FROM users WHERE id=$id";
     mysqli_query($conn,$sql);
-    echo "Deleted";
+    header("Location:details.php");
 ?>
