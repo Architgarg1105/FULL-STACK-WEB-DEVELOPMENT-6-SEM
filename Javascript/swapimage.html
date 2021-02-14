@@ -1,0 +1,32 @@
+<html>
+<head>
+    <style>
+        .p1 {
+  border: 2px outset rgb(7, 7, 7);
+  width: 25%;
+}
+    </style>
+<script>
+	function swap()
+	{
+		img11 = document.getElementById("img1");
+		img2 = document.getElementById("img2");
+		img = img1.src;
+		img1.src = img2.src;
+		img2.src = img;
+	}
+</script>
+</head>
+
+<body>
+    <div class="p1">
+        <img src="plus.png" id="img1" height="155" width="100%"/>
+      </div>
+      <br>
+      <div class="p1">
+        <img src="minuus.png" id="img2" height="155" width="100%"/>
+      </div>
+      
+<br /><button onclick="swap()">SWAP IMAGES</button>
+</body>
+</html>
