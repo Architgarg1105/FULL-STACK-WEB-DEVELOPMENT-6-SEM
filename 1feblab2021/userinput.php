@@ -8,7 +8,6 @@ include('config.php');
 <body>
 <form method="POST">
     USERNAME <input type="text" name="username" placeholder="Type Your Username" required><br>
-
     <input type="submit" name="submit" value="Click Here">
 </form>
 </body>
@@ -17,11 +16,14 @@ include('config.php');
 <?php
 if(isset($_POST['submit']))
 {
-    $username= $_POST['username'];
+$username= $_POST['username'];
 $sql= "SELECT * FROM users where username='$username'";
-// $sql1= "SELECT * FROM student_details username=$username";
 $result=mysqli_query($conn,$sql);
-// $result1=mysqli_query($conn,$sql1);
+$data = mysqli_fetch_array($result);
+$id=$data['id'];
+$sql1= "SELECT * FROM student_details where username='$id'";
+$result1=mysqli_query($conn,$sql1);
+$result=mysqli_query($conn,$sql);
 
 if($result->num_rows >0){?>
     <table border="1px">
@@ -31,28 +33,29 @@ if($result->num_rows >0){?>
                 <th>E-mail</th>
                 <th>Gender</th>
                 <th>City</th>
-                <!-- <th>Branch</th>
-                <th>Year</th> -->
+                <th>Branch</th>
+                <th>Year</th>
                 <th>Update</th>
                 <th>Delete</th>
             </tr>
         </thead>
         <tbody>
         <?php
-        // while($row=$result->fetch_array())
-        while($row=$result->fetch_assoc()){?>
+        while($row=$result->fetch_assoc() and $row1=$result1->fetch_assoc()){?>
             <tr>
                 <td><?php echo $row['username']?></td>
                 <td><?php echo $row['email']?></td>
                 <td><?php echo $row['gender']?></td>
                 <td><?php echo $row['city']?></td>
+                <td><?php echo $row1['branch']?></td>
+                <td><?php echo $row1['year']?></td>
                 <td><a href="edit.php?id=<?php echo $row['id']?>">
-                <input type="button" value="Edit"></a></td>
+                <input type="button" value="  Edit  "></a></td>
                 <td><a href="javascript:confirmDelete('delete.php?id=<?php echo $row['id']?>')">
                 <input type="button"value="Delete" name="delete"></a></td>
             </tr>
             <tr>
-            <td colspan="6"><a href="details.php">
+            <td colspan="8"><a href="details.php">
                 <input  type="button" value="Go to Details Page" style="height:30px; width:100%"></a></td>
             </tr>
             <?php } ?>
@@ -66,8 +69,6 @@ else
 }
 }
 ?>
-
-
 
 <script>
     <?php 
