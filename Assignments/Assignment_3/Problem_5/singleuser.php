@@ -19,13 +19,15 @@ if(isset($_POST['submit']))
 $username= $_POST['username'];
 $sql= "SELECT * FROM users where username='$username'";
 $result=mysqli_query($conn,$sql);
-$data = mysqli_fetch_array($result);
-$id=$data['id'];
-$sql1= "SELECT * FROM student_details where username='$id'";
-$result1=mysqli_query($conn,$sql1);
-$result=mysqli_query($conn,$sql);
 
-if($result->num_rows >0){?>
+
+if($result->num_rows >0){
+    $data = mysqli_fetch_array($result);
+    $id=$data['id'];
+    $sql1= "SELECT * FROM student_details where username='$id'";
+    $result1=mysqli_query($conn,$sql1);
+    $result=mysqli_query($conn,$sql);
+    ?>
     <table border="1px">
         <thead>
             <tr>
