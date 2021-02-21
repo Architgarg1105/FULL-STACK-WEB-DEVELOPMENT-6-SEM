@@ -1,0 +1,48 @@
+<htm>
+    <head>
+        <title>Swap Paragraph</title>
+        <style>
+            .p1{
+                color:rgb(80, 6, 70);
+                font-weight: 1000;           }
+            .p2{
+                color:blue;
+                font-weight: 1000;
+            }
+            button{
+                align-content: center;
+                margin-left: 47%;
+                margin-top: 5%;
+                height: 40px;
+                width: 100px;
+                background-color: chartreuse;
+                font-weight: 1000;
+            }
+            h1{
+                margin-left: 45%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Paragraph 1</h1>
+        <p class="p1">JavaScript is the world's most popular programming language.
+             JavaScript is the programming language of the Web. JavaScript is easy to learn.
+              This tutorial will teach you JavaScript from basic to advanced.</p>
+        <h1>Paragraph 2</h1>
+        <p class="p2">
+            HTML is the standard markup language for Web pages.
+            With HTML you can create your own Website.
+            HTML is easy to learn - You will enjoy it!</p>
+        <button onclick="changeText()">SWAP</button>
+        <script>
+            function changeText()
+            {
+                p1=document.getElementsByClassName('p1')[0];
+                p2=document.getElementsByClassName('p2')[0];
+                temp=p1.textContent;
+                p1.textContent=p2.textContent;
+                p2.textContent=temp;
+            }
+        </script>
+    </body>
+</htm>
