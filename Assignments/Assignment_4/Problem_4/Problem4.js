@@ -1,16 +1,19 @@
-aTag = document.querySelectorAll("a");
+// t=document.getElementsByName('q')[0] 
+// t.value='html'
+// s=document.getElementsByClassName('gNO89b')[0]
+// s.click()
+
+aTag = document.getElementsByTagName("a");
 arr = []
 for (i=0; i<aTag.length; i++)
 {
-    link = aTag[i].href;
-    arr.push([link]);
+    if(aTag[i].href.length != 0)
+    {
+        arr.push(aTag[i].href);
+    }
 };
-output()
-function output()
-{
-    ans = '<table><th>Links</th><tbody>';
-    for (i=0; i<arr.length; i++)
-            ans =ans + '<tr><td>'+ arr[i] + '</td><tr>';
-    w = window.open("");
-    w.document.write(ans); 
-}
+ans = '';
+for(i=0; i<arr.length; i++)
+    ans =ans + arr[i] +'<br>';
+w = window.open("");
+w.document.write(ans); 
