@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript Random Game</title>
+    <style>
+        canvas {
+            border: 2px solid #000000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table style="width:100%">
+        <tr>
+            <th>
+                <h3>Random Game</h3>
+            </th>
+            <th>
+                <h3>Response Time: <span id="responseTimeId"></span> seconds</h3>
+            </th>
+        </tr>
+    </table>
+    <canvas id="myCanvas" width="1500" height="665" onclick="randomImageNumber()"></canvas>
+    <script>
+        function randomImageNumber() {
+            l = 1;
+            h = 3;
+            var imgIndex = Math.floor(Math.random() * (h + 1 - l)) + l;
+
+            var digits = "0123456789ABCDEF";
+            low = 0;
+            high = 15;
+            color = '#';
+            for (i = 0; i < 6; i++) {
+                color = color + digits[Math.floor(Math.random() * (high + 1 - low)) + low];
+            }
+
+            min = 7,
+            max = 12;
+            var time = Math.floor(Math.random() * (max + 1 - min) + min);
+            setTimeout(myFunction, time * 100);
+
+            function myFunction() {
+                if (imgIndex == 1) {
+                    var canvas = document.getElementById('myCanvas');
+                    context = canvas.getContext('2d');
+                    var Square = function (x, y, width, height) {
+                        this.x = x;
+                        this.y = y;
+                        this.width = width;
+                        this.height = height;
+                    }
+                    Square.prototype.isHitBy = function (x, y) {
+                        return (x >= this.x && x <= this.x + this.width && y >= this.y && y <= this.y + this.height);
+                    }
+                    low = 0;
+                    high = 1290;
+                    var x = Math.floor(Math.random() * (high + 1 - low)) + low;
+                    low1 = 0;
+                    high1 = 455;
+                    var y = Math.floor(Math.random() * (high1 + 1 - low1)) + low1;
+                    var square = new Square(x, y, 200, 200);
+                    context.fillStyle = color;
+                    context.fillRect(x, y, 200, 200);
+                    var start = Date.now();
+                    canvas.addEventListener('click', function (e) {
+                        var canvasBounds = canvas.getBoundingClientRect();
+                        var clickX = e.pageX - canvasBounds.left;
+                        var clickY = e.pageY - canvasBounds.top;
+                        if (square.isHitBy(clickX, clickY)) {
+                            var end = Date.now();
+                            var responseTime = (end - start) / 1000;
+                            document.getElementById("responseTimeId").innerHTML = responseTime;
+                            context.clearRect(0, 0, 1500, 700);
+                        } else {
+                            var end = Date.now();
+                            var responseTime = 0;
+                            document.getElementById("responseTimeId").innerHTML = responseTime;
+                            context.clearRect(0, 0, 1500, 700);
+                        }
+                    });
+
+                } else if (imgIndex == 2) {
+                    var canvas = document.getElementById('myCanvas');
+                    var context = canvas.getContext('2d');
+                    var Rectangle = function (x, y, width, height) {
+                        this.x = x;
+                        this.y = y;
+                        this.width = width;
+                        this.height = height;
+                    }
+                    Rectangle.prototype.isHitBy = function (x, y) {
+                        return (x >= this.x && x <= this.x + this.width && y >= this.y && y <= this.y + this.height);
+                    }
+                    low = 10;
+                    high = 1290;
+                    var x = Math.floor(Math.random() * (high + 1 - low)) + low;
+                    low1 = 10;
+                    high1 = 455;
+                    var y = Math.floor(Math.random() * (high1 + 1 - low1)) + low1;
+                    var rectangle = new Rectangle(x, y, 200, 100);
+                    context.fillStyle = color;
+                    context.fillRect(x, y, 200, 100);
+                    var start = Date.now();
+                    canvas.addEventListener('click', function (e) {
+                        var canvasBounds = canvas.getBoundingClientRect();
+                        var clickX = e.pageX - canvasBounds.left;
+                        var clickY = e.pageY - canvasBounds.top;
+                        if (rectangle.isHitBy(clickX, clickY)) {
+                            var end = Date.now();
+                            var responseTime = (end - start) / 1000;
+                            document.getElementById("responseTimeId").innerHTML = responseTime;
+                            context.clearRect(0, 0, 1500, 700);
+                        } else {
+                            var end = Date.now();
+                            var responseTime = 0;
+                            document.getElementById("responseTimeId").innerHTML = responseTime;
+                            context.clearRect(0, 0, 1500, 700);
+                        }
+                    });
+
+                } else if (imgIndex == 3) {
+                    var canvas = document.getElementById("myCanvas");
+                    var context = canvas.getContext("2d");
+                    var Circle = function (x, y, radius) {
+                        this.x = x;
+                        this.y = y;
+                        this.radius = radius;
+                    }
+                    Circle.prototype.isHitBy = function (x, y) {
+                        var distance = Math.sqrt(Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2));
+                        return (distance <= this.radius);
+                    }
+                    low = 110;
+                    high = 1390;
+                    var x = Math.floor(Math.random() * (high + 1 - low)) + low;
+                    low1 = 110;
+                    high1 = 555;
+                    var y = Math.floor(Math.random() * (high1 + 1 - low1)) + low1;
+                    var circle = new Circle(x, y, 100);
+                    context.beginPath();
+                    context.arc(x, y, 100, 0, 2 * Math.PI);
+                    context.fillStyle = color;
+                    context.fill();
+                    var start = Date.now();
+                    canvas.addEventListener('click', function (e) {
+                        var canvasBounds = canvas.getBoundingClientRect();
+                        var clickX = e.pageX - canvasBounds.left;
+                        var clickY = e.pageY - canvasBounds.top;
+                        if (circle.isHitBy(clickX, clickY)) {
+                            var end = Date.now();
+                            var responseTime = (end - start) / 1000;
+                            document.getElementById("responseTimeId").innerHTML = responseTime;
+                            context.clearRect(0, 0, 1500, 700);
+                        } else {
+                            var end = Date.now();
+                            var responseTime = 0;
+                            document.getElementById("responseTimeId").innerHTML = responseTime;
+                            context.clearRect(0, 0, 1500, 700);
+                        }
+                    });
+                }
+            }
+        }
+    </script>
+</body>
+</html>
